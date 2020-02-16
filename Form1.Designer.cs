@@ -38,16 +38,21 @@
             this.подписанDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.номерДокументаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датаДокументаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.подписанDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.documentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.documentsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.signedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // databaseDataSet
@@ -112,63 +117,84 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 125;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.номерДокументаDataGridViewTextBoxColumn1,
-            this.датаДокументаDataGridViewTextBoxColumn1,
-            this.dataGridViewComboBoxColumn1,
-            this.подписанDataGridViewCheckBoxColumn1});
-            this.dataGridView1.DataSource = this.documentsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 425);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // databaseDataSetBindingSource
             // 
             this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
             this.databaseDataSetBindingSource.Position = 0;
             // 
-            // номерДокументаDataGridViewTextBoxColumn1
+            // dataGridView1
             // 
-            this.номерДокументаDataGridViewTextBoxColumn1.DataPropertyName = "Номер документа";
-            this.номерДокументаDataGridViewTextBoxColumn1.HeaderText = "Номер документа";
-            this.номерДокументаDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.номерДокументаDataGridViewTextBoxColumn1.Name = "номерДокументаDataGridViewTextBoxColumn1";
-            this.номерДокументаDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.signedDataGridViewCheckBoxColumn});
+            this.dataGridView1.DataSource = this.documentsBindingSource2;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(775, 425);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // датаДокументаDataGridViewTextBoxColumn1
+            // documentsBindingSource1
             // 
-            this.датаДокументаDataGridViewTextBoxColumn1.DataPropertyName = "Дата документа";
-            this.датаДокументаDataGridViewTextBoxColumn1.HeaderText = "Дата документа";
-            this.датаДокументаDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.датаДокументаDataGridViewTextBoxColumn1.Name = "датаДокументаDataGridViewTextBoxColumn1";
-            this.датаДокументаDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.documentsBindingSource1.DataMember = "Documents";
+            this.documentsBindingSource1.DataSource = this.databaseDataSetBindingSource;
             // 
-            // dataGridViewComboBoxColumn1
+            // documentsBindingSource2
             // 
-            this.dataGridViewComboBoxColumn1.DataPropertyName = "Статус ";
-            this.dataGridViewComboBoxColumn1.HeaderText = "Статус ";
-            this.dataGridViewComboBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.ReadOnly = true;
+            this.documentsBindingSource2.DataMember = "Documents";
+            this.documentsBindingSource2.DataSource = this.databaseDataSetBindingSource;
             // 
-            // подписанDataGridViewCheckBoxColumn1
+            // idDataGridViewTextBoxColumn
             // 
-            this.подписанDataGridViewCheckBoxColumn1.DataPropertyName = "Подписан";
-            this.подписанDataGridViewCheckBoxColumn1.HeaderText = "Подписан";
-            this.подписанDataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.подписанDataGridViewCheckBoxColumn1.Name = "подписанDataGridViewCheckBoxColumn1";
-            this.подписанDataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // signedDataGridViewCheckBoxColumn
+            // 
+            this.signedDataGridViewCheckBoxColumn.DataPropertyName = "Signed";
+            this.signedDataGridViewCheckBoxColumn.HeaderText = "Signed";
+            this.signedDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.signedDataGridViewCheckBoxColumn.Name = "signedDataGridViewCheckBoxColumn";
+            this.signedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 
@@ -181,8 +207,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentsBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,12 +225,15 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn подписанDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource databaseDataSetBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn номерДокументаDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датаДокументаDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn подписанDataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource documentsBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn signedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource documentsBindingSource2;
     }
 }
 

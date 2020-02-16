@@ -26,7 +26,19 @@ namespace testApp
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            SignForm signForm = new SignForm();
+            int index = e.RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[index];
+            string selectedId = selectedRow.Cells[0].Value.ToString();
+            string selectedData = selectedRow.Cells[1].Value.ToString();
+            string selectedDescription = selectedRow.Cells[2].Value.ToString();
+            string selectedStatus = selectedRow.Cells[3].Value.ToString();
+            string selectedSign = selectedRow.Cells[4].Value.ToString();
+
+            var selectedDocument = new SelectedDocument(selectedId,selectedData,selectedDescription,selectedStatus,selectedSign);
+           
+            //MessageBox.Show($"{selectedId},{selectedData},{selectedDescription},{selectedStatus},{selectedSign}");
+            SignForm signForm = new SignForm(selectedDocument);
+            
             signForm.ShowDialog();
             this.Hide();
         }
